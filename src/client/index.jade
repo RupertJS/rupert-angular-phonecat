@@ -39,9 +39,11 @@ html(lang='en', ng-app='phonecat')
               option(value='age') Newest
               
         .col-md-10
-          ul
-            li(ng-repeat='phone in state.phones | filter:query | orderBy: state.orderProp')
-              span {{ phone.name }}
+          ul.phones
+            li.thumbnail(ng-repeat='phone in state.phones | filter:query | orderBy: state.orderProp')
+              a.thumb(href="#/phones/{{phone.id}}")
+                img(ng-src="{{phone.imageUrl}}")
+              a(href="#/phones/{{phone.id}}") {{ phone.name }}
               p {{ phone.snippet }}
 
     script(src="templates.js")
