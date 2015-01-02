@@ -8,8 +8,8 @@
     "rename": "echo 'Coming Soon!'"
   },
   "dependencies": {
-    "rupert": "^0.2.6",
-    "rupert-config-angular": "^0.0.5",
+    "rupert": "^0.2.7",
+    "rupert-config-angular": "^0.0.8",
     "rupert-config-bootstrap": "^0.0.2"
   },
   "devDependencies": {
