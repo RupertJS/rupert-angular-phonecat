@@ -1,6 +1,6 @@
-describe 'Rupert App', ->
+describe 'Angular Phonecat', ->
   describe 'Title Service', ->
-    beforeEach module 'rupert-app.title-service'
+    beforeEach module 'phonecat.title-service'
 
     it 'has a good title', inject (TitleSvc)->
-      TitleSvc.title.should.equal 'A Rupert SPA'
+      TitleSvc.title.should.equal 'phonecat'
