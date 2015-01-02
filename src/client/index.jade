@@ -18,7 +18,7 @@ html(lang='en', ng-app='phonecat')
     //- Comment below to disable real-time sockets.
     script(src="socket.io/socket.io.js")
 
-  body
+  body(ng-controller='PhoneListController as state')
     //- Put your main content here
     //- .container //- bootstrap
     //- .container-fluid //- Bootstrap Responsive
@@ -32,9 +32,15 @@ html(lang='en', ng-app='phonecat')
           form.form-inline
             label Search:
             input.form-control(type='search', ng-model='query')
+
+            label Sort by:
+            select.form-control(ng-model='state.orderProp')
+              option(value='name') Alphabetical
+              option(value='age') Newest
+              
         .col-md-10
-          ul(ng-controller='PhoneListController as state')
-            li(ng-repeat='phone in state.phones | filter:query')
+          ul
+            li(ng-repeat='phone in state.phones | filter:query | orderBy: state.orderProp')
               span {{ phone.name }}
               p {{ phone.snippet }}
 
